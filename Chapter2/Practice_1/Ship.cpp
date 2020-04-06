@@ -17,14 +17,14 @@ Ship::Ship(Game* game) :
 	};
 	asc->SetAnimTextures("Ship", anims);
 
-	std::vector<SDL_Texture*> characterAnims = {
-		game->GetTexture("Assets/Character01.png"),
-		game->GetTexture("Assets/Character02.png"),
-		game->GetTexture("Assets/Character03.png"),
-		game->GetTexture("Assets/Character04.png")
+	std::vector<SDL_Texture*> EnemyAnims = {
+		game->GetTexture("Assets/Enemy01.png"),
+		game->GetTexture("Assets/Enemy02.png"),
+		game->GetTexture("Assets/Enemy03.png"),
+		game->GetTexture("Assets/Enemy04.png")
 	};
-	asc->SetAnimTextures("Character", characterAnims);
-	asc->PlayAnim("Ship");
+	asc->SetAnimTextures("Enemy", EnemyAnims);
+	asc->PlayAnim("Enemy", false);
 }
 
 void Ship::UpdateActor(float deltaTime) {

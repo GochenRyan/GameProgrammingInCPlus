@@ -16,9 +16,11 @@ public:
 	float GetAnimFPS() const { return mAnimFPS; }
 	void SetAnimFPS(float fps) { mAnimFPS = fps; }
 	// Play the animation by name
-	void PlayAnim(std::string name);
+	void PlayAnim(std::string name, bool loop = true);
 	// Stop the animation
 	void StopAnim();
+	bool IsLoop();
+	void SetLoop(bool loop);
 private:
 	// All the animations
 	std::unordered_map<std::string, std::vector<SDL_Texture*>> mAnimTextures;
@@ -28,4 +30,5 @@ private:
 	float mAnimFPS;
 	// Current frame name
 	std::string mAnimName;
+	bool mLoop;
 };
